@@ -36,6 +36,7 @@ Each agent has its own directory with guideline files and an `INSTALL.md` for se
 | Agent | Directory | Install Guide |
 |-------|-----------|---------------|
 | **Claude Code** | [`claude-code/`](claude-code/) | [INSTALL.md](claude-code/INSTALL.md) |
+| **AntCC** | [`antcc/`](antcc/) | [INSTALL.md](antcc/INSTALL.md) |
 | **Cursor** | [`cursor/`](cursor/) | [INSTALL.md](cursor/INSTALL.md) |
 | **Codex** | [`codex/`](codex/) | [INSTALL.md](codex/INSTALL.md) |
 | **Qoder** | [`qoder/`](qoder/) | [INSTALL.md](qoder/INSTALL.md) |

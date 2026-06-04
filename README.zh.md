@@ -36,6 +36,7 @@
 | Agent | 目录 | 安装指南 |
 |-------|-----------|---------------|
 | **Claude Code** | [`claude-code/`](claude-code/) | [INSTALL.md](claude-code/INSTALL.md) |
+| **AntCC** | [`antcc/`](antcc/) | [INSTALL.md](antcc/INSTALL.md) |
 | **Cursor** | [`cursor/`](cursor/) | [INSTALL.md](cursor/INSTALL.md) |
 | **Codex** | [`codex/`](codex/) | [INSTALL.md](codex/INSTALL.md) |
 | **Qoder** | [`qoder/`](qoder/) | [INSTALL.md](qoder/INSTALL.md) |
