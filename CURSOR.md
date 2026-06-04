@@ -18,11 +18,13 @@ This project includes a **Cursor project rule** so the Karpathy-inspired behavio
 
 If you want the same content as a reusable skill under `~/.cursor/skills`, use [`skills/karpathy-guidelines/SKILL.md`](skills/karpathy-guidelines/SKILL.md). You can copy or symlink it into your personal skills directory; use whatever layout you use for other skills.
 
-## Claude Code vs Cursor
+## Claude Code, Cursor, and Codex
 
 - **Claude Code:** Install via the plugin marketplace and [`README.md`](README.md) instructions; the plugin exposes the skill from this repo. Per-project use can also rely on `CLAUDE.md`.
 - **Cursor:** Use the committed `.cursor/rules/` file as described above. Cursor does not read `.claude-plugin/` or `CLAUDE.md` by default.
+- **Codex:** Root [`AGENTS.md`](AGENTS.md) supplies persistent programming behavior; repository skills under `.agents/skills` supply reusable workflows. See [`CODEX.md`](CODEX.md).
+- **Qoder:** User-level `~/.qoder/AGENTS.md` and project-level root [`AGENTS.md`](AGENTS.md) supply persistent programming behavior; `~/.qoder/skills` supplies the reusable guideline skill. See [`QODER.md`](QODER.md).
 
 ## For contributors
 
-When you change the four principles, keep **[`CLAUDE.md`](CLAUDE.md)** and **[`.cursor/rules/karpathy-guidelines.mdc`](.cursor/rules/karpathy-guidelines.mdc)** in sync. If the published skill/plugin text should match, update **[`skills/karpathy-guidelines/SKILL.md`](skills/karpathy-guidelines/SKILL.md)** as well.
+When you change the four principles, keep **[`CLAUDE.md`](CLAUDE.md)**, **[`.cursor/rules/karpathy-guidelines.mdc`](.cursor/rules/karpathy-guidelines.mdc)**, **[`AGENTS.md`](AGENTS.md)**, and **[`.agents/skills/codex-karpathy-strict/SKILL.md`](.agents/skills/codex-karpathy-strict/SKILL.md)** in sync. If the published skill/plugin text should match, update **[`skills/karpathy-guidelines/SKILL.md`](skills/karpathy-guidelines/SKILL.md)** as well.

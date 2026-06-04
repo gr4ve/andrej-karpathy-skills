@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex Karpathy Workflow"
+  short_description: "Minimal, evidence-driven repository changes for Codex"
+  default_prompt: "Use $codex-karpathy-workflow to implement this repository change with a minimal patch and verifiable evidence."

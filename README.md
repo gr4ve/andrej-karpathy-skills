@@ -129,6 +129,14 @@ curl https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/
 
 This repository includes a committed Cursor project rule ([`.cursor/rules/karpathy-guidelines.mdc`](.cursor/rules/karpathy-guidelines.mdc)) so the same guidelines apply when you open the project in Cursor. See **[CURSOR.md](CURSOR.md)** for setup, using the rule in other projects, and how this relates to Claude Code.
 
+## Using with Codex
+
+The root [`AGENTS.md`](AGENTS.md) makes the Karpathy principles persistent for Codex programming tasks in this repository. Reusable Codex workflows live under [`.agents/skills`](.agents/skills), the official repository skill location. See **[CODEX.md](CODEX.md)** for global setup, skill invocation, and instruction precedence.
+
+## Using with Qoder
+
+Qoder CLI reads a user-level `~/.qoder/AGENTS.md` for every project and a project-level [`AGENTS.md`](AGENTS.md) from the repository root, so the Karpathy principles apply persistently without skill invocation. The reusable [`skills/karpathy-guidelines/SKILL.md`](skills/karpathy-guidelines/SKILL.md) can also be installed under `~/.qoder/skills`. See **[QODER.md](QODER.md)** for global setup, per-project use, and skill installation.
+
 ## Key Insight
 
 From Andrej:

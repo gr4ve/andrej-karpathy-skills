@@ -1,0 +1,7 @@
+interface:
+  display_name: "Strict Karpathy Guidelines for Codex"
+  short_description: "Strict change control for high-risk repository edits"
+  default_prompt: "Use $codex-karpathy-strict to complete this high-risk repository change under strict minimal-change and verification rules."
+
+policy:
+  allow_implicit_invocation: false

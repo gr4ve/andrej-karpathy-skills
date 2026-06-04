@@ -129,6 +129,14 @@ curl https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/
 
 本仓库包含一个已提交的 Cursor 项目规则 ([`.cursor/rules/karpathy-guidelines.mdc`](.cursor/rules/karpathy-guidelines.mdc))，因此在 Cursor 中打开项目时同样适用这些指南。详情请参见 **[CURSOR.md](CURSOR.md)**，包括如何在其他项目中使用该规则，以及它与 Claude Code 的关系。
 
+## 在 Codex 中使用
+
+仓库根目录的 [`AGENTS.md`](AGENTS.md) 会让 Codex 在本仓库的编程任务中持续遵循 Karpathy 原则。可复用 Codex 工作流位于官方仓库 skill 路径 [`.agents/skills`](.agents/skills) 下。全局配置、skill 调用方式和指令优先级请参见 **[CODEX.md](CODEX.md)**。
+
+## 在 Qoder 中使用
+
+Qoder CLI 会为每个项目读取用户级的 `~/.qoder/AGENTS.md`，并加载仓库根目录的项目级 [`AGENTS.md`](AGENTS.md)，因此无需调用 skill 即可持续遵循 Karpathy 原则。可复用的 [`skills/karpathy-guidelines/SKILL.md`](skills/karpathy-guidelines/SKILL.md) 也可安装到 `~/.qoder/skills` 下。全局配置、按项目使用和 skill 安装请参见 **[QODER.md](QODER.md)**。
+
 ## 核心洞察
 
 来自 Andrej：

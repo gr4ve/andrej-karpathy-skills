@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la /Users/gr4ve/Develop/githubrepos/andrej-karpathy-skills && echo \"---AGENTS---\" && ls -la /Users/gr4ve/Develop/githubrepos/andrej-karpathy-skills/.agents 2>/dev/null)",
+      "Bash(cd /Users/gr4ve/Develop/githubrepos/andrej-karpathy-skills && find .qoder .agents .cursor .claude-plugin skills -type f | sort)",
+      "Bash(ls -la ~/.qoder/AGENTS.md 2>/dev/null && echo \"---exists---\" || echo \"AGENTS.md NOT present\"; echo \"===skills===\"; ls -la ~/.qoder/skills/ 2>/dev/null)",
+      "Bash(cp -R /Users/gr4ve/Develop/githubrepos/andrej-karpathy-skills/skills/karpathy-guidelines ~/.qoder/skills/karpathy-guidelines && ls -la ~/.qoder/skills/karpathy-guidelines)",
+      "Bash(cd /Users/gr4ve/Develop/githubrepos/andrej-karpathy-skills && git remote -v)",
+      "Bash(cd /Users/gr4ve/Develop/githubrepos/andrej-karpathy-skills && git remote set-url origin https://github.com/gr4ve/andrej-karpathy-skills.git && git remote -v)",
+      "Bash(cd /Users/gr4ve/Develop/githubrepos/andrej-karpathy-skills && git status)",
+      "Bash(cd /Users/gr4ve/Develop/githubrepos/andrej-karpathy-skills && git --no-pager log --oneline -5)",
+      "Bash(cd /Users/gr4ve/Develop/githubrepos/andrej-karpathy-skills && git add CURSOR.md README.md README.zh.md .agents/ .qoder/ AGENTS.md CODEX.md QODER.md)"
+    ]
+  }
+}
