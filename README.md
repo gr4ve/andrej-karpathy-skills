@@ -1,10 +1,10 @@
-# Karpathy-Inspired Claude Code Guidelines
+# Karpathy-Inspired Coding Agent Guidelines
 
 > Check out my new project [Multica](https://github.com/multica-ai/multica) — an open-source platform for running and managing coding agents with reusable skills.
 >
 > Follow me on X: [https://x.com/jiayuan_jy](https://x.com/jiayuan_jy)
 
-A single `CLAUDE.md` file to improve Claude Code behavior, derived from [Andrej Karpathy's observations](https://x.com/karpathy/status/2015883857489522876) on LLM coding pitfalls.
+Behavioral guidelines to improve coding agent behavior, derived from [Andrej Karpathy's observations](https://x.com/karpathy/status/2015883857489522876) on LLM coding pitfalls. Each supported agent has its own isolated directory with guideline files and installation instructions.
 
 English | [简体中文](./README.zh.md)
 
@@ -20,7 +20,7 @@ From Andrej's post:
 
 ## The Solution
 
-Four principles in one file that directly address these issues:
+Four principles that directly address these issues:
 
 | Principle | Addresses |
 |-----------|-----------|
@@ -28,6 +28,17 @@ Four principles in one file that directly address these issues:
 | **Simplicity First** | Overcomplication, bloated abstractions |
 | **Surgical Changes** | Orthogonal edits, touching code you shouldn't |
 | **Goal-Driven Execution** | Leverage through tests-first, verifiable success criteria |
+
+## Supported Agents
+
+Each agent has its own directory with guideline files and an `INSTALL.md` for setup:
+
+| Agent | Directory | Install Guide |
+|-------|-----------|---------------|
+| **Claude Code** | [`claude-code/`](claude-code/) | [INSTALL.md](claude-code/INSTALL.md) |
+| **Cursor** | [`cursor/`](cursor/) | [INSTALL.md](cursor/INSTALL.md) |
+| **Codex** | [`codex/`](codex/) | [INSTALL.md](codex/INSTALL.md) |
+| **Qoder** | [`qoder/`](qoder/) | [INSTALL.md](qoder/INSTALL.md) |
 
 ## The Four Principles in Detail
 
@@ -96,47 +107,6 @@ For multi-step tasks, state a brief plan:
 
 Strong success criteria let the LLM loop independently. Weak criteria ("make it work") require constant clarification.
 
-## Install
-
-**Option A: Claude Code Plugin (recommended)**
-
-From within Claude Code, first add the marketplace:
-```
-/plugin marketplace add forrestchang/andrej-karpathy-skills
-```
-
-Then install the plugin:
-```
-/plugin install andrej-karpathy-skills@karpathy-skills
-```
-
-This installs the guidelines as a Claude Code plugin, making the skill available across all your projects.
-
-**Option B: CLAUDE.md (per-project)**
-
-New project:
-```bash
-curl -o CLAUDE.md https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/CLAUDE.md
-```
-
-Existing project (append):
-```bash
-echo "" >> CLAUDE.md
-curl https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/CLAUDE.md >> CLAUDE.md
-```
-
-## Using with Cursor
-
-This repository includes a committed Cursor project rule ([`.cursor/rules/karpathy-guidelines.mdc`](.cursor/rules/karpathy-guidelines.mdc)) so the same guidelines apply when you open the project in Cursor. See **[CURSOR.md](CURSOR.md)** for setup, using the rule in other projects, and how this relates to Claude Code.
-
-## Using with Codex
-
-The root [`AGENTS.md`](AGENTS.md) makes the Karpathy principles persistent for Codex programming tasks in this repository. Reusable Codex workflows live under [`.agents/skills`](.agents/skills), the official repository skill location. See **[CODEX.md](CODEX.md)** for global setup, skill invocation, and instruction precedence.
-
-## Using with Qoder
-
-Qoder CLI reads a user-level `~/.qoder/AGENTS.md` for every project and a project-level [`AGENTS.md`](AGENTS.md) from the repository root, so the Karpathy principles apply persistently without skill invocation. The reusable [`skills/karpathy-guidelines/SKILL.md`](skills/karpathy-guidelines/SKILL.md) can also be installed under `~/.qoder/skills`. See **[QODER.md](QODER.md)** for global setup, per-project use, and skill installation.
-
 ## Key Insight
 
 From Andrej:
@@ -156,17 +126,7 @@ These guidelines are working if you see:
 
 ## Customization
 
-These guidelines are designed to be merged with project-specific instructions. Add them to your existing `CLAUDE.md` or create a new one.
-
-For project-specific rules, add sections like:
-
-```markdown
-## Project-Specific Guidelines
-
-- Use TypeScript strict mode
-- All API endpoints must have tests
-- Follow the existing error handling patterns in `src/utils/errors.ts`
-```
+These guidelines are designed to be merged with project-specific instructions. See the INSTALL.md in each agent directory for details on per-project and global setup.
 
 ## Tradeoff Note
 

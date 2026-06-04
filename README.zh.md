@@ -1,10 +1,10 @@
-# 受 Karpathy 启发的 Claude Code 指南
+# 受 Karpathy 启发的编码智能体指南
 
 > 查看我的新项目 [Multica](https://github.com/multica-ai/multica) —— 一个用于运行和管理编码智能体的开源平台，支持可复用的技能。
 >
 > 在 X 上关注我：[https://x.com/jiayuan_jy](https://x.com/jiayuan_jy)
 
-一个单一的 `CLAUDE.md` 文件，用于改善 Claude Code 的行为，源自 [Andrej Karpathy 的观察](https://x.com/karpathy/status/2015883857489522876) 关于 LLM 编码陷阱的总结。
+改善编码智能体行为的指南，源自 [Andrej Karpathy 的观察](https://x.com/karpathy/status/2015883857489522876)。每个支持的 Agent 拥有独立目录，包含指南文件和安装说明。
 
 [English](./README.md) | 简体中文
 
@@ -20,7 +20,7 @@
 
 ## 解决方案
 
-四个原则，集中在一个文件中，直接解决这些问题：
+四个原则，直接解决这些问题：
 
 | 原则 | 解决什么问题 |
 |-----------|-----------|
@@ -28,6 +28,17 @@
 | **简洁优先** | 过度复杂、臃肿抽象 |
 | **精准修改** | 无关编辑、触碰不应碰的代码 |
 | **目标驱动执行** | 通过测试优先、可验证的成功标准 |
+
+## 支持的 Agent
+
+每个 Agent 有独立目录，包含指南文件和 `INSTALL.md` 安装说明：
+
+| Agent | 目录 | 安装指南 |
+|-------|-----------|---------------|
+| **Claude Code** | [`claude-code/`](claude-code/) | [INSTALL.md](claude-code/INSTALL.md) |
+| **Cursor** | [`cursor/`](cursor/) | [INSTALL.md](cursor/INSTALL.md) |
+| **Codex** | [`codex/`](codex/) | [INSTALL.md](codex/INSTALL.md) |
+| **Qoder** | [`qoder/`](qoder/) | [INSTALL.md](qoder/INSTALL.md) |
 
 ## 四个原则详解
 
@@ -96,47 +107,6 @@ LLM 经常默默选择一种解释然后执行。这个原则强制明确推理�
 
 强有力的成功标准让 LLM 能够独立循环执行。弱标准（"让它工作"）需要不断澄清。
 
-## 安装
-
-**选项 A：Claude Code 插件（推荐）**
-
-在 Claude Code 中，首先添加插件市场：
-```
-/plugin marketplace add forrestchang/andrej-karpathy-skills
-```
-
-然后安装插件：
-```
-/plugin install andrej-karpathy-skills@karpathy-skills
-```
-
-这会将指南安装为 Claude Code 插件，使其在你所有项目中可用。
-
-**选项 B：CLAUDE.md（按项目）**
-
-新项目：
-```bash
-curl -o CLAUDE.md https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/CLAUDE.md
-```
-
-已有项目（追加）：
-```bash
-echo "" >> CLAUDE.md
-curl https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/CLAUDE.md >> CLAUDE.md
-```
-
-## 在 Cursor 中使用
-
-本仓库包含一个已提交的 Cursor 项目规则 ([`.cursor/rules/karpathy-guidelines.mdc`](.cursor/rules/karpathy-guidelines.mdc))，因此在 Cursor 中打开项目时同样适用这些指南。详情请参见 **[CURSOR.md](CURSOR.md)**，包括如何在其他项目中使用该规则，以及它与 Claude Code 的关系。
-
-## 在 Codex 中使用
-
-仓库根目录的 [`AGENTS.md`](AGENTS.md) 会让 Codex 在本仓库的编程任务中持续遵循 Karpathy 原则。可复用 Codex 工作流位于官方仓库 skill 路径 [`.agents/skills`](.agents/skills) 下。全局配置、skill 调用方式和指令优先级请参见 **[CODEX.md](CODEX.md)**。
-
-## 在 Qoder 中使用
-
-Qoder CLI 会为每个项目读取用户级的 `~/.qoder/AGENTS.md`，并加载仓库根目录的项目级 [`AGENTS.md`](AGENTS.md)，因此无需调用 skill 即可持续遵循 Karpathy 原则。可复用的 [`skills/karpathy-guidelines/SKILL.md`](skills/karpathy-guidelines/SKILL.md) 也可安装到 `~/.qoder/skills` 下。全局配置、按项目使用和 skill 安装请参见 **[QODER.md](QODER.md)**。
-
 ## 核心洞察
 
 来自 Andrej：
@@ -156,17 +126,7 @@ Qoder CLI 会为每个项目读取用户级的 `~/.qoder/AGENTS.md`，并加载�
 
 ## 定制
 
-这些指南设计用于与项目特定指令合并。将它们添加到你现有的 `CLAUDE.md` 或创建一个新的。
-
-对于项目特定规则，添加如下章节：
-
-```markdown
-## 项目特定指南
-
-- 使用 TypeScript 严格模式
-- 所有 API 端点必须有测试
-- 遵循 `src/utils/errors.ts` 中现有的错误处理模式
-```
+这些指南设计用于与项目特定指令合并。详情请参见各 Agent 目录下的 INSTALL.md。
 
 ## 权衡说明
 
